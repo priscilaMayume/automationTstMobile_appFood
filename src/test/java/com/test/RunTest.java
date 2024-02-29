@@ -6,10 +6,10 @@ import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "json:target/reports/cucumberTestes.json", "html:reportes/cucumber-reports.html"},
+@CucumberOptions(plugin = {"json:target/reports/cucumberTestes.json", "html:reportes/cucumber-reports.html"},
         features = {"src/test/resources/features"},
         tags = {"@test"},
-        glue = {"com.test"})
+        glue = {"com.test.steps"})
 public class RunTest {
     @AfterClass
     public static void quitApp() {

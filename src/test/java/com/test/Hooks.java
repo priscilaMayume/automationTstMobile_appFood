@@ -15,14 +15,15 @@ public class Hooks {
     public static AppiumDriver<?> checkDriver() throws MalformedURLException {
         if (driver == null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "src/test/resources/app/qafood.apk");
+            capabilities.setCapability("app", "/Users/priscilahirotsu/pessoal/projetos/qaFood/qaFood.apk");
+           // capabilities.setCapability("app", "src/test/resources/app/qafood.apk");
             capabilities.setCapability("deviceName", "emulator-5554");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("appPackage", "com.qazandoqafood");
             capabilities.setCapability("appActivity", "com.qazandoqafood.MainActivity");
             capabilities.setCapability("automationName", "uiautomator2");
 
-            driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+            driver = new AndroidDriver<>(new URL("http://localhost:4723"), capabilities);
         }
         return driver;
     }

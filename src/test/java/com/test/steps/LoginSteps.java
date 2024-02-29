@@ -5,8 +5,20 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.net.MalformedURLException;
+
 public class LoginSteps {
-    LoginScreen login = new LoginScreen();
+    LoginScreen login;
+
+    public LoginSteps() {
+        try {
+            login = new LoginScreen();
+        } catch (MalformedURLException e) {
+            System.out.println("Deu errado");
+            e.printStackTrace();
+        }
+    }
+
 
     @Given("^I have valid login credentials \"([^\"]*)\" \"([^\"]*)\"$")
     public void i_have_valid_login_credentials(String email, String psw) {
@@ -15,7 +27,7 @@ public class LoginSteps {
 
     @When("^I click on the confirm login button$")
     public void i_click_on_the_confirm_login_button() {
-        login.confirmEmailButtonw();
+        login.confirmEmailButton();
 
     }
 
