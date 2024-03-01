@@ -15,8 +15,8 @@ public class Hooks {
     public static AppiumDriver<?> checkDriver() throws MalformedURLException {
         if (driver == null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "/Users/priscilahirotsu/pessoal/projetos/qaFood/qaFood.apk");
-           // capabilities.setCapability("app", "src/test/resources/app/qafood.apk");
+            String appPath = System.getProperty("user.dir") + "/src/test/resources/app/qafood.apk";
+            capabilities.setCapability("app", appPath);
             capabilities.setCapability("deviceName", "emulator-5554");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("appPackage", "com.qazandoqafood");
